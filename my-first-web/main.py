@@ -6,6 +6,7 @@ app = Flask(__name__)
 def home():
     return "Hello, World!"
 
+@app.route("/greet/", defaults={'name': 'Guest'})
 @app.route("/greet/<name>")
 def greet(name):
     return f"Hello, {name}!"
